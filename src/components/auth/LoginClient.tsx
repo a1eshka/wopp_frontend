@@ -7,7 +7,7 @@ import { useSnackbar } from 'notistack';
 import { PatternFormat } from "react-number-format";
 
 const BASE_URL = 'https://api.wopp.ru';
-
+const YANDEX_URL = 'https://wopp.ru'
 type LoginStep = 'credentials' | 'password_setup';
 
 export default function LoginClient() {
@@ -19,7 +19,7 @@ export default function LoginClient() {
   const router = useRouter();
   const { enqueueSnackbar } = useSnackbar();
 
-  const origin = typeof window !== "undefined" ? window.location.origin : `${BASE_URL}`;
+  const origin = typeof window !== "undefined" ? window.location.origin : `${YANDEX_URL}`;
 
   const YANDEX_CLIENT_ID = "ffa5eaad181c4b8bb132882f3cc7488c";
   const yandexRedirect = `${origin}/auth/callback/yandex`;

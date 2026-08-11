@@ -41,7 +41,6 @@ export default function UserProfileSettings() {
         const res = await fetch(`${BASE_URL}/api/accounts/me`, {
           headers: {
             'Authorization': `Bearer ${token}`,
-            'ngrok-skip-browser-warning': 'true'
           }
         });
         if (res.ok) {
