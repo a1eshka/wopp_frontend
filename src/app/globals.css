@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-montserrat), sans-serif !important;
+}
+
+.dadata-custom-wrapper .react-dadata__container {
+  width: 100%;
+}
+
+/* Выпадающее меню с подсказками */
+.dadata-custom-wrapper .react-dadata__suggestions {
+  margin-top: 8px;
+  border-radius: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.9); /* border-slate-200 */
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08); /* Мягкая тень */
+  overflow: hidden;
+  background-color: #ffffff;
+  font-size: 13px;
+  z-index: 50;
+  padding: 4px;
+}
+
+/* Отдельный пункт списка */
+.dadata-custom-wrapper .react-dadata__suggestion {
+  padding: 10px 14px;
+  color: #334155; /* text-slate-700 */
+  border-radius: 10px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+/* Наведение или выбор стрелками клавиатуры */
+.dadata-custom-wrapper .react-dadata__suggestion--current {
+  background-color: #f1f5f9; /* bg-slate-100 */
+  color: #0f172a; /* text-slate-900 */
+  font-weight: 600;
+}
+
+/* Подсветка совпадающего текста (совпадения ввода) */
+.dadata-custom-wrapper .react-dadata__suggestion-highlight {
+  color: #0f172a; /* text-slate-900 */
+  font-weight: 700;
+  background: transparent;
+}
